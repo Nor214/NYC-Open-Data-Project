@@ -4,11 +4,17 @@
     <script src="script.js"></script>
     <script src="helper.js"></script>
 </head>
-<body>
-    <h1>Hello</h1>
-    <div class="card">
-        <h3>Card Test</h3>
-    </div>
-    <input type="button" value="Button" onclick="init()">
+<body onload="init()">
+    <select class="dropdown" id="yeardrop">
+        <option value="None">None</option>
+        <option value="twentyone">2021</option>
+        <option value="twentytwen">2020</option>
+        <option value="twentynine">2019</option>
+        <option value="twentyeight">2018</option>
+        <option value="twentyseven">2017</option>
+        <option value="twentysix">2016</option>
+        <option value="twentyfive">2015</option>
+    </select>
+    <input type="button" value="Filter" onclick="filterbyyear()" class="dropdown">
     <div id="output"></div>
 </body>
