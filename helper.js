@@ -13,13 +13,3 @@ function card(info){
            </div>`;
   return build;
 }
-
-function init(){
-    $.ajaxSetup({async: false});
-    data = $.getJSON("data.js").responseJSON;
-    output = get("output");
-    let build = ""
-    for(let i = 0; i < data.length; i += 1){
-        card(data)
-    }
-}
