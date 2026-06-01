@@ -16,17 +16,45 @@ async function init(){
 }
 
 function filterbyyear(){
-
     let output = get("output");
-    let year = get("yeardrop.value");
+    let year = get("yeardrop").value;
+    let build = "";
 
-    let build = ""
-    if(year == "twentyfive"){
-      for(let i = 0; i < data.length; i += 1){
-        let death = data[i]
+    for(let i = 0; i < data.length; i += 1){
+      let death = data[i]
+      if(death.year == year){
         build += card(death)
       }
-    }  
+    }
+    output.innerHTML = build
+}
+
+function filterbygender(){
+    let output = get("output");
+    let gender = get("gender").value;
+    let build = "";
+
+    for(let i = 0; i < data.length; i += 1){
+      let death = data[i]
+      if(death.sex == gender){
+        build += card(death)
+      }
+    }
+    output.innerHTML = build
+}
+
+function filterbyboth(){
+    let output = get("output");
+    let gender = get("gender").value;
+    let year = get("yeardrop").value;
+    let build = "";
+
+    for(let i = 0; i < data.length; i += 1){
+      let death = data[i]
+      if(death.sex == gender && death.year == year){
+        build += card(death)
+      }
+    }
     output.innerHTML = build
 }
 
