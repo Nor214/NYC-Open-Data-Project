@@ -53,6 +53,12 @@ function filterbyboth(){
       let death = data[i]
       if(death.sex == gender && death.year == year){
         build += card(death)
+      } else if(gender == "Both" && death.year == year){
+        build += card(death)
+      } else if(year == "2018" && gender == "Female" && death.sex == "F"){
+        build += card(death)
+      } else if(year == "2018" && gender == "Male" && death.sex == "M"){
+        build += card(death)
       }
     }
     output.innerHTML = build
