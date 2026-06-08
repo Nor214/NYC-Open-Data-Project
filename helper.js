@@ -3,7 +3,7 @@ function get(id){
 }
 
 function card(info){
-  build = `<div class="card line">
+  build = `<div class="fitted2 card2">
               <h2>${info.year}</h2>
               <h4>${info.leading_cause}</h4>
               <h4>Deaths due to cause: ${info.deaths}</h4>

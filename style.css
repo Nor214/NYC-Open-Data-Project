@@ -151,3 +151,43 @@ html{
   transition: 0.2s;
   transform: scale(1.01);
 }
+
+.card2{
+  opacity: 80%;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.2s;
+  flex:1;
+  margin:10px;
+  padding:10px;
+  border:1px solid gray;
+  text-align:center;
+  box-shadow:2px 2px 2px black;
+  border-radius:2px;
+}
+
+.fitted2{
+  max-width:200px;
+  min-width:200px;
+}
+
+#output{
+  z-index: 0;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.card2:hover{
+  transition: all 0.2s;
+  opacity: 100%;
+  background-color: rgb(255, 255, 255);
+  transform: scale(1.03);
+}
+
+.yeah{
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.445);
+}
+
+#navigationbar a:hover{
+  background-color: rgb(235, 235, 235);
+}

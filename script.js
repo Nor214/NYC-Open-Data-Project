@@ -15,6 +15,18 @@ async function init(){
     output.innerHTML = build
 }
 
+function otherinit(){
+      let output = get("output");
+
+    let build = ""
+    for(let i = 0; i < data.length; i += 1){
+      let death = data[i]
+      build += card(death)
+    }
+
+    output.innerHTML = build
+}
+
 function filterbyyear(){
     let output = get("output");
     let year = get("yeardrop").value;
@@ -62,5 +74,43 @@ function filterbyboth(){
       }
     }
     output.innerHTML = build
+}
+
+
+function DeathByYears(){
+  let twenty21 = 0, twenty20 = 0, twenty19 = 0, twenty18 = 0, twenty17 = 0, twenty16 = 0, twenty15 = 0;
+
+  for(let i = 0; i < data.length; i++){
+    let death = data[i];
+    if(death.year == "2021"){
+      twenty21++;
+    }else if(death.year == "2020"){
+      twenty20++;
+    }else if(death.year == "2019"){
+      twenty19++;
+    }else if(death.year == "2018"){
+      twenty18++;
+    }else if(death.year == "2017"){
+      twenty17++;
+    }else if(death.year == "2016"){
+      twenty16++;
+    }else if(death.year == "2015"){
+      twenty15++;
+    }
+    
+  }
+  let chartData = [
+    ["2021",twenty21],
+    ["2020",twenty20],
+    ["2019", twenty19],
+    ["2018", twenty18],
+    ["2017", twenty17]
+    ["2016", twenty16]
+    ["2015", twenty15]
+  ]
+  
+  let chartType = get("chartType").value;
+  
+  displayChart(chartData,"output",chartType)
 }
 
