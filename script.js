@@ -76,9 +76,19 @@ function filterbyboth(){
     output.innerHTML = build
 }
 
+function displayChart( data, id, type ){
+  let chart = c3.generate({
+    bindto: '#' + id,
+    data: {
+      columns: data,
+      type:type
+    }
+  });
+}
 
 function DeathByYears(){
   let twenty21 = 0, twenty20 = 0, twenty19 = 0, twenty18 = 0, twenty17 = 0, twenty16 = 0, twenty15 = 0;
+  let data = "data.json"
 
   for(let i = 0; i < data.length; i++){
     let death = data[i];
