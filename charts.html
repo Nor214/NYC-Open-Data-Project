@@ -1,24 +1,52 @@
-<head>
-    <title>NYC Analysis</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WD Lesson 7.6 Demonstration</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-    <script src="helper.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
     <script src="d3-5.8.2.min-c5268e33.js"></script>
     <script src="c3.min-d2a1f852.js"></script>
-</head>
-<body>
+    <script src="helper.js"></script>
+    <script src="script.js"></script>
+   </head>
+  <body onload="init()">
+    <style>
+        body{
+            background-image: url("lower.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+    <div>
+        <nav class="navigation container" id="navigationbar">
+            <a href="cards.html" class="links">Filter</a>
+            <a href="charts.html" class="links">Analysis</a>
+        </nav>
+    </div>
+    <div id="banner" class="container center">
+      <div style="text-align:center">
+          <h1> Analysis </h1>
+      </div>
+    </div>
+    <div class="container subbanner">
+      <div style="background-color: rgb(255, 255, 255); width: 100%; text-align:center;">
+        <p>The chart here shows the number of deaths "based on the data" throughout the respective years of 2015-2021.</p>
+       </div>
+    </div>
     <div class="container">
-      <select class="dropdown">
-        <option>Select Chart Type</option>
+      <select id="chartType" class="dropdown">
+        <option class="dropdown">Select Chart Type</option>
         <option value="bar">Bar</option>
         <option value="pie">Pie</option>
         <option value="donut">Donut</option>
       </select>
       <a class="dropdown" onclick="DeathByYears()"> Display </a>
     </div>
-    <div class="output"></div>
-
-
-</body>
+    <div class="container subbanner"><br></div>
+    <div id="output" style="background-color: rgb(255, 255, 255);"></div> 
+  </body>
+</html>

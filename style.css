@@ -191,3 +191,12 @@ html{
 #navigationbar a:hover{
   background-color: rgb(235, 235, 235);
 }
+
+#banner{
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+#backgroundcolorthingy{
+  background-color: rgb(255, 255, 255);
+}

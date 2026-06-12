@@ -1,22 +1,12 @@
-let data;
+let data, output, result;
 async function init(){
-    let link = "data.json"
-    info = await fetch(link);
-    data = await info.json();
-
-    let output = get("output");
-
-    let build = ""
-    for(let i = 0; i < data.length; i += 1){
-      let death = data[i]
-      build += card(death)
-    }
-
-    output.innerHTML = build
+  let link = "data.json"
+  info = await fetch(link);
+  data = await info.json();
 }
 
-function otherinit(){
-      let output = get("output");
+function cards(){
+    let output = get("output");
 
     let build = ""
     for(let i = 0; i < data.length; i += 1){
@@ -86,9 +76,9 @@ function displayChart( data, id, type ){
   });
 }
 
+let subdata;
 function DeathByYears(){
   let twenty21 = 0, twenty20 = 0, twenty19 = 0, twenty18 = 0, twenty17 = 0, twenty16 = 0, twenty15 = 0;
-  let data = "data.json"
 
   for(let i = 0; i < data.length; i++){
     let death = data[i];
@@ -110,17 +100,18 @@ function DeathByYears(){
     
   }
   let chartData = [
-    ["2021",twenty21],
-    ["2020",twenty20],
+    ["2021", twenty21],
+    ["2020", twenty20],
     ["2019", twenty19],
     ["2018", twenty18],
-    ["2017", twenty17]
-    ["2016", twenty16]
-    ["2015", twenty15]
+    ["2017", twenty17],
+    ["2016", twenty16],
+    ["2015", twenty15],
   ]
   
   let chartType = get("chartType").value;
   
   displayChart(chartData,"output",chartType)
 }
+
 
